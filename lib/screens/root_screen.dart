@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heco/screens/feedback_screen.dart';
 import 'home_screen.dart';
 import 'theme_generator_screen.dart';
 import 'future_screen.dart';
@@ -16,7 +17,7 @@ class _RootScreenState extends State<RootScreen> {
   final List<Widget> _screens = const [
     HomeScreen(),
     ThemeGeneratorScreen(),
-    FutureScreen(),
+    FeedbackScreen(),
   ];
 
   @override
@@ -33,11 +34,14 @@ class _RootScreenState extends State<RootScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.color_lens ),
+            icon: Icon(Icons.color_lens),
             label: "Colors",
           ),
           BottomNavigationBarItem(icon: Icon(Icons.palette), label: "Themes"),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "More"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.feedback),
+            label: "Feedback",
+          ),
         ],
       ),
     );
