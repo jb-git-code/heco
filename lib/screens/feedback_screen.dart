@@ -43,9 +43,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
         const SnackBar(content: Text("Feedback submitted successfully")),
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Something went wrong")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Something went wrong")));
     } finally {
       setState(() => isSubmitting = false);
     }
@@ -54,10 +54,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("📝 Feedback"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text("Feedback"), centerTitle: true),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
