@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'screens/root_screen.dart';
 
 void main() {
   runApp(const ColorHelperApp());
@@ -11,13 +11,10 @@ class ColorHelperApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Color Helper',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
-      home: const HomeScreen(),
+      title: 'HECO',
+      theme: ThemeData(useMaterial3: true),
+      home: const RootScreen(),
     );
   }
 }

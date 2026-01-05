@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'home_screen.dart';
+import 'theme_generator_screen.dart';
+import 'future_screen.dart';
+
+class RootScreen extends StatefulWidget {
+  const RootScreen({super.key});
+
+  @override
+  State<RootScreen> createState() => _RootScreenState();
+}
+
+class _RootScreenState extends State<RootScreen> {
+  int _currentIndex = 0;
+
+  final List<Widget> _screens = const [
+    HomeScreen(),
+    ThemeGeneratorScreen(),
+    FutureScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_currentIndex],
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.color_lens ),
+            label: "Colors",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.palette), label: "Themes"),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "More"),
+        ],
+      ),
+    );
+  }
+}

@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 8),
-            Text("RGB: ", style: const TextStyle(fontSize: 16)),
+            Text("RGB: $rgb", style: const TextStyle(fontSize: 16)),
 
             const SizedBox(height: 16),
 
@@ -175,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // 🎨 MONOCHROME PALETTE
             const Text(
-              "🎨 Monochrome Palette",
+              "Monochrome Palette",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
 
